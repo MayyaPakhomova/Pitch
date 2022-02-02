@@ -1,0 +1,225 @@
+.feedback {
+  margin-top   : 52px;
+
+  @media (min-width: 720px) {
+    margin-top: 48px;
+  }
+
+  @media (min-width: 1360px) {
+    margin-top: 65px;
+  }
+
+  &__container {
+    max-width: 320px;
+    margin   : 0 auto;
+    padding  : 0 16px;
+
+    @media (min-width: 500px) {
+      max-width: 500px;
+    }
+
+    @media (min-width: 720px) {
+      max-width: 720px;
+    }
+
+    @media (min-width: 1360px) {
+      padding: 0;
+    }
+  }
+
+  h2 {
+    @include text (24px, 32px, 500);
+
+    @media (min-width: 720px) {
+      @include text (32px, 40px, 500);
+    }
+  }
+
+  p {
+    margin-top: 6px;
+    @include text (18px, 28px, 500);
+    color: $blueshGray;
+    width: 90%;
+
+    @media (min-width: 720px) {
+      margin-top: 2px;
+      @include text (20px, 21px, 500);
+    }
+
+  }
+
+  &__btn {
+    margin-top: 17px;
+    @include button-blue;
+
+    @media (min-width: 1024px) {
+      margin-top: 26px;
+    }
+
+  }
+}
+
+.feedback-form {
+  margin-top: 14px;
+
+  @media (min-width: 720px) {
+    margin-top: 17px;
+  }
+
+  &__input {
+    margin-top   : 16px;
+    background   : rgba($lightGray, .2);
+    border-radius: 1px;
+    height       : 44px;
+    width        : 100%;
+    padding-left : 16px;
+
+    @media (min-width: 1024px) {
+      width: 66%;
+    }
+
+    &::placeholder {
+      @include text(16px, 40px, 500);
+      color: $blueshGray;
+    }
+  }
+
+  &__header {
+    @include text (20px, 32px, 500);
+    color: rgba($blueshGray, .8);
+  }
+}
+
+.feedback-inner {
+  margin-top: 11px;
+
+  @media (min-width: 720px) {
+    display: flex;
+    gap    : 28px;
+  }
+}
+
+.feedback-gender {
+  margin-top: 5px;
+  display   : flex;
+  gap       : 25px;
+
+  label {
+    cursor: pointer;
+  }
+
+  @media (min-width: 720px) {
+    gap: 22px;
+  }
+}
+
+.feedback-gender-btn {
+
+  &__span {
+    position      : relative;
+    display       : inline-block;
+    width         : 16px;
+    height        : 16px;
+    border        : 1px solid $lightGray;
+    border-radius : 100%;
+    vertical-align: text-top;
+    margin-right  : 10px;
+
+    &:before {
+      content      : '';
+      display      : inline-block;
+      width        : 12px;
+      height       : 12px;
+      background   : $violet;
+      border-radius: 50%;
+      position     : absolute;
+      left         : 50%;
+      top          : 50%;
+      transform    : translate(-50%, -50%) scale(0);
+      @include transition;
+    }
+  }
+
+  &__input {
+    position: absolute;
+    width   : 0;
+    height  : 0;
+    opacity : 0;
+    z-index : -1;
+
+    &:checked+.feedback-gender-btn__span::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+}
+
+.feedback-consent {
+  display   : flex;
+  margin-top: 31px;
+  gap       : 6px;
+  cursor    : pointer;
+
+  @media (min-width: 720px) {
+    margin-left: 2px;
+    margin-top : 39px;
+  }
+
+  @media (min-width: 1024px) {
+    &:hover:not(:focus-visible) {
+      .feedback-details__span {
+        outline: 1px solid $violet;
+      }
+
+      .feedback-details__span::before {
+        transform: translate(-50%, -50%) scale(1);
+        color    : $lightGray;
+      }
+    }
+  }
+
+  span {
+    @include text (16px, 24px, 500);
+  }
+}
+
+.feedback-details {
+  cursor: pointer;
+
+  &__span {
+    position      : relative;
+    display       : inline-block;
+    width         : 20px;
+    height        : 20px;
+    outline       : 1px solid $lightGray;
+    vertical-align: text-top;
+
+    &:before {
+      content  : '\2713';
+      display  : inline-block;
+      position : absolute;
+      left     : 50%;
+      top      : 51%;
+      color    : $white;
+      transform: translate(-50%, -50%) scale(0);
+      @include transition;
+      z-index: 12;
+    }
+  }
+
+  &__input {
+    position: absolute;
+    width   : 0;
+    height  : 0;
+    opacity : 0;
+    z-index : -1;
+
+    &:checked+.feedback-details__span {
+      background-color: $violet;
+    }
+
+    &:checked+.feedback-details__span::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+}

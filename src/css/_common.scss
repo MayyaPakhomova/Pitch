@@ -1,0 +1,344 @@
+@import '_colors';
+
+* {
+  margin   : 0;
+  padding  : 0;
+  // border: 1px solid red;
+}
+
+main {
+  display: block
+}
+
+hr {
+  box-sizing: content-box;
+  height    : 0;
+  overflow  : visible
+}
+
+pre {
+  font-family: monospace, monospace;
+  font-size  : 1em
+}
+
+a {
+  text-decoration : none;
+  background-color: transparent
+}
+
+abbr[title] {
+  border-bottom  : none;
+  text-decoration: underline;
+  text-decoration: underline dotted
+}
+
+b,
+strong {
+  font-weight: bolder
+}
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size  : 1em
+}
+
+small {
+  font-size: 80%
+}
+
+sub,
+sup {
+  font-size     : 75%;
+  line-height   : 0;
+  position      : relative;
+  vertical-align: baseline
+}
+
+sub {
+  bottom: -0.25em
+}
+
+sup {
+  top: -0.5em
+}
+
+img {
+  border-style: none;
+  width       : 100%;
+  height      : 100%;
+  object-fit  : cover;
+}
+
+h2,
+h3,
+h4,
+p {
+  margin : 0;
+  padding: 0;
+}
+
+svg path {
+  fill  : inherit;
+  stroke: inherit;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family     : inherit;
+  font-size       : 100%;
+  line-height     : 1.15;
+  margin          : 0;
+  outline         : none;
+  border          : none;
+  cursor          : pointer;
+  background-color: transparent
+}
+
+button,
+input {
+  overflow: visible
+}
+
+button,
+select {
+  text-transform: none
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding     : 0
+}
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em
+}
+
+legend {
+  box-sizing : border-box;
+  color      : inherit;
+  display    : table;
+  max-width  : 100%;
+  padding    : 0;
+  white-space: normal
+}
+
+progress {
+  vertical-align: baseline
+}
+
+textarea {
+  overflow: auto
+}
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  appearance: none;
+  padding   : 0
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto
+}
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset    : -2px
+}
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font              : inherit
+}
+
+details {
+  display: block
+}
+
+summary {
+  display: list-item
+}
+
+template {
+  display: none
+}
+
+[hidden] {
+  display: none
+}
+
+a:active,
+a:focus {
+  outline: none;
+}
+
+input,
+textarea {
+  outline: none;
+  border : none
+}
+
+input:active,
+textarea:active,
+input:focus {
+  outline: none;
+}
+
+:focus {
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+textarea {
+  resize: horizontal;
+}
+
+ul {
+  padding: 0;
+  margin : 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+@font-face {
+  font-family: 'Rajdhani';
+  src        : local('Rajdhani Regular'),
+    local('Rajdhani-Regular'),
+    url(../fonts/Rajdhani-Regular.woff2) format('woff2'),
+    url(../fonts/Rajdhani-Regular.woff) format('woff');
+  font-weight: 400;
+  font-style : normal
+}
+
+@font-face {
+  font-family: 'Rajdhani';
+  src        : local('Rajdhani Medium'),
+    local('Rajdhani-Medium'),
+    url(../fonts/Rajdhani-Medium.woff2) format('woff2'),
+    url(../fonts/Rajdhani-Regular.woff) format('woff');
+  font-weight: 500;
+  font-style : normal
+}
+
+@font-face {
+  font-family: 'Rajdhani';
+  src        : local('Rajdhani SemiBold'),
+    local('Rajdhani-SemiBold'),
+    url(../fonts/Rajdhani-SemiBold.woff2) format('woff2'),
+    url(../fonts/Rajdhani-SemiBold.woff) format('woff');
+  font-weight: 600;
+  font-style : normal
+}
+
+@font-face {
+  font-family: 'Rajdhani';
+  src        : local('Rajdhani Bold'),
+    local('Rajdhani-Bold'),
+    url(../fonts/Rajdhani-Bold.woff2) format('woff2'),
+    url(../fonts/Rajdhani-Bold.woff) format('woff');
+  font-weight: 700;
+  font-style : normal
+}
+
+html,
+body {
+  position   : relative;
+  padding    : 0;
+  margin     : 0;
+  font-family: 'Rajdhani', 'sans-serif';
+  font-weight: 500;
+  font-size  : 16px;
+  line-height: 24px;
+}
+
+
+h1 {
+  position: absolute;
+  width   : 1px;
+  height  : 1px;
+  margin  : -1px;
+  padding : 0;
+  overflow: hidden;
+  border  : 0;
+  clip    : rect(0 0 0 0)
+}
+
+.logo {
+  position: absolute;
+  width   : 65px;
+  height  : 36px;
+  top     : 23px;
+  left    : 16px;
+  fill    : $violet;
+  z-index : 5;
+
+  @media (min-width: 1360px) {
+    width : 94px;
+    height: 54px;
+    top   : 32px;
+    left  : 53px;
+  }
+}
+
+.wrapper {
+  @media (min-width: 1024px) {
+    position             : relative;
+    max-width            : 1024px;
+    width                : 100%;
+    overflow             : hidden;
+    margin               : 0 auto;
+    display              : grid;
+    grid-template-rows   : 768px;
+    grid-template-columns: repeat(2, minmax(512px, auto));
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+  }
+
+  @media (min-width: 1360px) {
+    max-width            : 1360px;
+    grid-template-columns: 600px minmax(660px, auto);
+    grid-column-gap      : 92px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .inner {
+    grid-area   : 1/2/1/3;
+    overflow-x  : hidden;
+    overflow-y  : scroll;
+    height      : 768px;
+    margin-right: -20px;
+  }
+}

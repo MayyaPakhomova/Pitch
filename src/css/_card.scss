@@ -1,0 +1,179 @@
+.card {
+  @media (min-width: 1024px) {
+    grid-area: 1/1/1/2;
+  }
+}
+
+.swiper {
+  width : 100%;
+  height: 600px;
+
+  @media (min-width: 1024px) {
+    height: 768px;
+  }
+}
+
+.card-image {
+  height  : 100%;
+  position: relative;
+
+  &__info {
+    position: absolute;
+    bottom  : 26px;
+    left    : 16px;
+
+    @media (min-width: 1360px) {
+      bottom: 32px;
+      left  : 51px;
+    }
+  }
+
+  &__photo {
+    img {
+      object-position: top;
+    }
+  }
+
+}
+
+.card-photo-two {
+  object-position: left top;
+}
+
+.card-slide-info {
+  &__title {
+    @include text(48px, 48px, 400);
+    color: $white;
+
+    @media (min-width: 720px) {
+      @include text(64px, 64px, 400);
+    }
+
+    @media (min-width: 1360px) {
+      @include text(72px, 72px, 400);
+    }
+  }
+
+  &__text {
+    color: $white;
+
+    @media (min-width: 720px) {
+      @include text(24px, 32px, 500);
+    }
+
+    @media (min-width: 1360px) {
+      @include text(28px, 32px, 400);
+    }
+  }
+
+  &__page {
+    position: relative;
+    color   : $white;
+    @include text(20px, 32px, 500);
+    margin-top : 32px;
+    margin-left: 133px;
+
+    @media (min-width: 720px) {
+      margin-top: 25px;
+    }
+
+    @media (min-width: 1360px) {
+      margin-top: 32px;
+    }
+
+    &::before {
+      position        : absolute;
+      content         : '';
+      top             : 50%;
+      left            : 54px;
+      width           : 16px;
+      height          : 1px;
+      background-color: $white;
+    }
+
+    span {
+      margin-left: 27px;
+    }
+
+    span:last-child {
+      color: rgba($white, 0.5)
+    }
+  }
+}
+
+.card-button-prev,
+.card-button-next {
+  position: absolute;
+  bottom  : 10.1%;
+  cursor  : pointer;
+  @media (min-width: 1360px) {
+    bottom: 8.6%;
+  }
+}
+
+.card-button-next {
+  left: 64px;
+  @media (min-width: 1360px) {
+    left: 98px;
+  }
+
+  &__svg {
+    position     : absolute;
+    fill         : $white;
+    height       : 18px;
+    width        : 18px;
+    z-index      : 20;
+    border       : 1px solid transparent;
+    border-radius: 100%;
+    padding      : 8px;
+    @include transition;
+
+    &:active:not(:focus-visible) {
+      background-color: $white;
+      border          : 1px solid $white;
+      fill            : $blueshGray;
+      @include transition;
+    }
+
+    @media (min-width: 1024px) {
+      &:hover:not(:focus-visible) {
+        border: 1px solid $white;
+        @include transition;
+      }
+    }
+  }
+}
+
+.card-button-prev {
+  left: 13px;
+  @media (min-width: 1360px) {
+    left: 50px;
+  }
+  &__svg {
+    position     : absolute;
+    fill         : $white;
+    height       : 18px;
+    width        : 18px;
+    z-index      : 20;
+    border       : 1px solid transparent;
+    border-radius: 100%;
+    padding      : 8px;
+    transform    : rotate(180deg);
+    @include transition;
+
+    &:active:not(:focus-visible) {
+      background-color: $white;
+      border          : 1px solid $white;
+      fill            : $blueshGray;
+      @include transition;
+    }
+
+    @media (min-width: 1024px) {
+      &:hover:not(:focus-visible) {
+        border: 1px solid $white;
+        @include transition;
+      }
+    }
+  }
+
+}
